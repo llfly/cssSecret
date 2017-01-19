@@ -35,7 +35,100 @@
 
 
         2. currentColor
-        
+        lightgoldenrodyellow
+
+        颜色关键字currentColor：Css中有史以来第一个变量，这个关键字没有绑定到一个固定的颜色值，而是一直被解析为color
+
+        所有的水平分割线自动与文本颜色保持一直
+
+        hr{
+            height:.5em;
+            background:currentColor;
+        }
+
+        很多已有的属性也具有类似的行为。eg：
+        没有给边框指定颜色，它就会自动的从文本颜色那里得到颜色。
+        因为currentColor本身就是很多css颜色属性的初始值。比如border-color和outline-color ,text-shadow和box-shadow
+
+        3.继承
+        inherit
+        可以用在任何css属性中，而且它总是绑定在父元素的计算值（对伪元素来说，则会取生成该伪元素的宿主元素）
+
+        input,select,button{font:inherit;}
+
+        inherit关键址对于背景色非常有用  例如：
+        提示框的小箭头从父元素那里获取背景色和边框样式。
+        .callout{position:relative;}
+        .callout::befor{
+            content:"",
+            position:absolute;
+            top:-.4em;left:1em;
+            padding:.35em;
+            background:inherit;
+            border:inherit;
+            border-right:0;
+            border-bottom:0;
+            transform:rotate(45deg);
+        }
+    </div>
+
+    <div>
+        相信你的眼睛，而不是数字
+        关于响应式网页设计  Responsive web design RWD
+        添加Media Query 每个媒体查询都会增加成本
+
+        避免使用媒体查询的方式：
+        使用百分比长度来取代固定长度。如果实在做不到这一点，也应该尝试使用与视图相关的单位(vw,vh,vmin,vmax)，它们的值解析为视图宽度或高度的百分比
+        当你需要在较大分辨率下得到固定宽度时，使用max-width而不是width，因为它可以适应较小的分辨率，而无需使用媒体查询
+        不要忘记为替换元素（比如img,object,video,iframe等）设置一个max-width，值为100%;
+        假如背景图片需要完整地铺满一个容器，不管容器的尺寸如何变化，background-size:cover这个属性都可以做到。但是我们也要时刻牢记，带宽并不是无限的，因此移动网页要注意
+        当图片（或其他元素）以行列式进行布局时，让视口的宽度来决定列的数量。弹性盒布局(Flexbox)或者display:inline-block加上常规的文本折行行为，都可以实现这一点。
+        在使用多列文本时，指定column-width（列宽）而不是指定column-count（列数），这样它就可以在较小的屏幕上自动显示为单列布局。
+    </div>
+
+    <div>
+        合理使用简写
+
+        background:rebeccapurple;
+        background-color:rebeccapurple;
+
+
+        background
+
+        background: url(tr.png) no-repeat top right / 2em 2em;
+                    url(br.png) no-repeat bottom right / 2em 2em;
+                    url(bl.png) no-repeat bottom left / 2em 2em;
+        (background-position / background-size  /为了消除歧义)
+
+
+        background: url(tr.png) top right;
+                    url(br.png) bottom right;
+                    url(bl.png) bottom left;
+        background-size: 2em 2em;
+        background-repeat:no-repeat;
+    </div>
+
+
+    <div>
+        预处理器
+        Stylus,Sass,less
+        css文件体积和复杂度失控
+        调试难度增加 sourceMap
+        预处理器在开发过程中引入了一定程度的延时。
+        学习成本
+        抽象泄漏法则：所有重大的抽象机制在某种程度上都存在泄漏的情况。
+
+        很多受预处理器启发的特性都已经融入原生css
+        css自定义属性暨层叠式变量https://www.w3.org/TR/css-variables-1/
+        css值与单位中的calc()函数
+        css颜色 color()函数
+        嵌套
+
+        ul {--accent-color:purple;}
+        ol {--accent-color:rebeccapurple;}
+        li {background:var(--accent-color)}
+
+        Myth myth.io
     </div>
 </body>
 </html>
