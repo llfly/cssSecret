@@ -2,12 +2,27 @@
  * Multiple borders
  */
 
-div {
+div{
     width: 100px;
     height: 60px;
     margin: 25px;
     background: yellowgreen;
+}
+
+
+.boxShadow {
     box-shadow: 0 0 0 10px #655,
     0 0 0 15px deeppink,
     0 2px 5px 15px rgba(0,0,0,.6);
+}
+
+
+.outline{
+    border:10px solid #655;
+    outline:5px solid deeppink;
+}
+
+.dashed{
+    outline:1px dashed deeppink;
+    outline-offset:-5px;
 }
