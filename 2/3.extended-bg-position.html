@@ -15,9 +15,22 @@
         回退方案 把老套的bottom right定位值写进background的简写属性中
     </div>
 
-    在给背景图片设置距离某个角的偏移量时，
-    <div>
+    在给背景图片设置距离某个角的偏移量时，有一种情况：偏移量与容器的内边框一致
+    <div class="bgPosTest">
+        采用上面的background-position扩展语法,同时设置padding和position
+    </div>
+
+    background-position:top left;默认情况下是以padding box为准，这样边框才不会遮住背景图片。可以通过background-origin来改变成context-box
+
+    <div class="bgOrign">
 
     </div>
+    通过calc来实现
+    <div class="calc">
+        calc方案
+    </div>
+
+
+
 </body>
 </html>

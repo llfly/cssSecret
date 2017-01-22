@@ -18,3 +18,22 @@ div{
     background: url('code-pirate.svg') no-repeat bottom right #58a;
     background-position: right 20px bottom 10px;
 }
+
+
+.bgPosTest{
+    padding: 10px;
+    background: url('code-pirate.svg') no-repeat bottom right #58a;
+    background-position: right 10px bottom 10px;
+}
+
+
+.bgOrign{
+    padding: 10px;
+    background: url('code-pirate.svg') no-repeat bottom right #58a;
+    background-origin: content-box;
+}
+
+.calc{
+    background: url('code-pirate.svg') no-repeat bottom right #58a;
+    background-position: calc(100% - 20px) calc(100% - 10px);/* +- 运算符前后要加空格*/
+}
